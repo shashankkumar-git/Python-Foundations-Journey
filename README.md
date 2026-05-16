@@ -26,4 +26,4 @@ The repository is organized by daily progress:
 - [ ] Integration with Git/GitHub Workflows
 
 ---
-*“The best time to plant a tree was 20 years ago. The second best time is now.”*
+*“The best time to plant a tree was 20 years ago. The second best time is now."*
