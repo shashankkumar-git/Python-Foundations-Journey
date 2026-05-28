@@ -23,7 +23,24 @@ def intialize_folder(folder_path):
             elif extension != "":
                 files.append(items)
 
+        all_extensions = []
+
+        for file_name in files:
+            name, extension = os.path.splitext(file_name)
+            all_extensions.append(extension)
+
+        unique_extension = set(all_extensions)
+
+        for ext in unique_extension:
+            folder_name  = ext.replace(".","")
+
+            new_folder_path = os.path.join(folder_path, folder_name)
+
+            os.makedirs(new_folder_path, exist_ok=True)
+        print(f"\nFolders detected: {folder}")
+        print(f"Files detected: {files}")
+    
     else:
         print("The given path file doesn't exists")
-
+        
 intialize_folder(target_dir)
