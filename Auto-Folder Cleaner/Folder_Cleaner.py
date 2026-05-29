@@ -1,5 +1,7 @@
 import os
 
+import shutil
+
 target_dir = input("Please provide the path of the file to be cleaned: ")
 
 def intialize_folder(folder_path):
@@ -37,8 +39,20 @@ def intialize_folder(folder_path):
             new_folder_path = os.path.join(folder_path, folder_name)
 
             os.makedirs(new_folder_path, exist_ok=True)
+
         print(f"\nFolders detected: {folder}")
         print(f"Files detected: {files}")
+
+        for file in files:
+            source_path = os.path.join(folder_path, file)
+
+            _, file_extension = os.path.splitext(file)
+
+            file_extension = file_extension.replace(".","")
+
+            destination_path = os.path.join(folder_path, file_extension)
+
+            shutil.move(source_path, destination_path)
     
     else:
         print("The given path file doesn't exists")
