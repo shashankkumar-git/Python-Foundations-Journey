@@ -2,7 +2,6 @@ import os
 
 import shutil
 
-target_dir = input("Please provide the path of the file to be cleaned: ")
 
 def intialize_folder(folder_path):
     print("*"*15 ,"AUTOMATED FOLDER CLEANER ACTIVATED", "*"*15, "\n")
@@ -56,5 +55,12 @@ def intialize_folder(folder_path):
     
     else:
         print("The given path file doesn't exists")
-        
-intialize_folder(target_dir)
+
+
+target_dir = input("Please provide the folder paths to be cleaned (separated by commas): ")
+temp_dir = list(target_dir.split(","))
+
+for file_paths in temp_dir:
+    clean_path = file_paths.strip()
+
+    intialize_folder(clean_path)
